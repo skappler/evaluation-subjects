@@ -6,8 +6,6 @@ public class StackMachine {
 
 	private final Stack<Integer> stack;
 
-	// private Operator last;
-
 	public StackMachine() {
 		this.stack = new Stack<Integer>();
 	}
@@ -23,11 +21,9 @@ public class StackMachine {
 
 		switch (t) {
 		case DIVIDED:
-			// if (this.last == Operator.PLUS) {
-			// this.last = null;
-			// throw new IllegalStateException("An error occured");
-			// }
+			
 			if (l == 0 || r == 0) {
+			// this check is wrong. we only should be checking for the right operand
 				throw new IllegalStateException("There is a 0 on the stack");
 			}
 			res = l / r;
@@ -45,7 +41,6 @@ public class StackMachine {
 			throw new IllegalStateException("???");
 
 		}
-		// this.last = t;
 		this.stack.push(res);
 	}
 

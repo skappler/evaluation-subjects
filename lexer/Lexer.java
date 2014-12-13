@@ -47,8 +47,8 @@ public class Lexer {
 			return false;
 		}
 
-		if (s.toCharArray()[0] == '_') { // this check should not be -> this is
-											// a bug
+		// this check simulates a bug in the variable name validation
+		if (s.toCharArray()[0] == '_') {										
 			return false;
 		}
 
@@ -61,7 +61,7 @@ public class Lexer {
 		} catch (final NumberFormatException e) {
 			return false;
 		}
-		// only got here if we didn't return false
+
 		return true;
 	}
 
